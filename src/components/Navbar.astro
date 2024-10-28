@@ -1,0 +1,110 @@
+---
+const Menu = [
+  {
+    name: "¿Quien soy?",
+    url: "/",
+  },
+  {
+    name: "Servicios",
+    url: "/about",
+  },
+  {
+    name: "Proyectos",
+    url: "/contact",
+  },
+  {
+    name: "Blog",
+    url: "/contact",
+  },
+  {
+    name: "Componentes",
+    url: "/componentes",
+  },
+];
+---
+
+<nav>
+  <div class="contenedor-logo">
+    <a href="/">
+      <img src="/public/dikaios-logo.svg" alt="Logo de la empresa" /></a
+    >
+    <ul>
+      {
+        Menu.map((item) => (
+          <li>
+            <a href={item.url}>{item.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div>
+    <button>Contáctame</button>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 4rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: var(--dark-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    width: 95dvw;
+    padding: 0.5rem;
+
+    .contenedor-logo {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 24px;
+        margin-right: 2rem;
+      }
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 1rem 1rem;
+        border-radius: 8px;
+
+        &:hover {
+          background-color: #e0e1dd11;
+          transition: all 0.5s;
+        }
+      }
+    }
+    button {
+      background-color: var(--purple);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      padding: 1rem 2rem;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--purple-dark);
+        transition: all 0.5s;
+      }
+    }
+  }
+</style>

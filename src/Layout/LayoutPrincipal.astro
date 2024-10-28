@@ -1,0 +1,27 @@
+---
+import Navbar from "@components/Navbar.astro";
+import "@styles/Globals.astro";
+import styles from "./LayoutPrincipal.module.css";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class={styles.body}>
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  main {
+    padding: 4.5rem 3rem;
+  }
+</style>
